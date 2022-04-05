@@ -1,0 +1,40 @@
+# 继承
+
+## 多继承
+
+```python
+class Download:
+    @staticmethod
+    def down():
+        print("下载文件")
+
+    @staticmethod
+    def whoami():
+        print("I am Download.")
+
+
+class Upload:
+    @staticmethod
+    def up():
+        print("上传文件")
+
+    @staticmethod
+    def whoami():
+        print("I am Upload.")
+
+
+class File(Upload, Download):
+    pass
+
+
+if __name__ == '__main__':
+    f = File()
+    f.down()
+    f.up()
+    f.whoami()
+```
+
+参考：python同时继承多个类且方法相同.https://blog.csdn.net/wltsysterm/article/details/104440255
+
+如果调用的父类的方法不一样，那就是调用特定的某个父类的方法，如果调用的父类方法在两个父类里头都有，遵循先来后到原则。
+
